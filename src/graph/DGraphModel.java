@@ -206,7 +206,7 @@ class TopoSorter<T> {
             for (T v : neighbors) {
                 int inDegree = indegreeMap.get(v);
                 indegreeMap.put(v, inDegree - 1);
-                if (inDegree - 1 == 0)
+                if (indegreeMap.get(v) == 0)
                     queue.push(v);
             }
         }//while: queue not empty
